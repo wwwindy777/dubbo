@@ -108,9 +108,9 @@ public class ZKTools {
     }
 
     public static void testStartupConfig() {
-        String str = "dubbo.registry.address=zookeeper://127.0.0.1:2181\n" +
+        String str = "dubbo.registry.address=nacos://192.168.8.177:8848\n" +
                 "dubbo.registry.group=dubboregistrygroup1\n" +
-                "dubbo.metadata-report.address=zookeeper://127.0.0.1:2181\n" +
+                "dubbo.metadata-report.address=nacos://192.168.8.177:8848\n" +
                 "dubbo.protocol.port=20990\n" +
                 "dubbo.service.org.apache.dubbo.demo.DemoService.timeout=9999\n";
 

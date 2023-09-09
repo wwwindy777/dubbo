@@ -69,7 +69,7 @@ class ServiceDiscoveryRegistryTest {
     private static AbstractServiceNameMapping mapping = mock(AbstractServiceNameMapping.class);
     private static Lock lock = new ReentrantLock();
 
-    private static URL registryURL = URL.valueOf("zookeeper://127.0.0.1:2181/org.apache.dubbo.registry.RegistryService");
+    private static URL registryURL = URL.valueOf("nacos://192.168.8.177:8848/org.apache.dubbo.registry.RegistryService");
     private static URL url = URL.valueOf("consumer://127.0.0.1/TestService?interface=TestService1&check=false&protocol=dubbo");
     private static NotifyListener testServiceListener = mock(NotifyListener.class);
 

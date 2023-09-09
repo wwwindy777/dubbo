@@ -75,8 +75,8 @@ class ApolloDynamicConfigurationTest {
 //                .addParameter("namespace", "governance");
 //
 //        apolloDynamicConfiguration = new ApolloDynamicConfiguration(url);
-//        putData("dubbo", "dubbo.registry.address", "zookeeper://127.0.0.1:2181");
-//        assertEquals("zookeeper://127.0.0.1:2181", apolloDynamicConfiguration.getProperties(null, "dubbo"));
+//        putData("dubbo", "dubbo.registry.address", "nacos://192.168.8.177:8848");
+//        assertEquals("nacos://192.168.8.177:8848", apolloDynamicConfiguration.getProperties(null, "dubbo"));
 //
 //        putData("governance", "router.tag", "router tag rule");
 //        assertEquals("router tag rule", apolloDynamicConfiguration.getConfig("router.tag", "governance"));

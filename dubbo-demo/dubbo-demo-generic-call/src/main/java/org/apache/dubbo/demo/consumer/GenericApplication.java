@@ -49,11 +49,11 @@ public class GenericApplication {
         ApplicationConfig applicationConfig = new ApplicationConfig("demo-consumer");
 
         MetadataReportConfig metadataReportConfig = new MetadataReportConfig();
-        metadataReportConfig.setAddress("zookeeper://127.0.0.1:2181");
+        metadataReportConfig.setAddress("nacos://192.168.8.177:8848");
 
         DubboBootstrap bootstrap = DubboBootstrap.getInstance();
         bootstrap.application(applicationConfig)
-            .registry(new RegistryConfig("zookeeper://127.0.0.1:2181"))
+            .registry(new RegistryConfig("nacos://192.168.8.177:8848"))
             .protocol(new ProtocolConfig(CommonConstants.DUBBO, -1))
             .reference(reference)
             .start();

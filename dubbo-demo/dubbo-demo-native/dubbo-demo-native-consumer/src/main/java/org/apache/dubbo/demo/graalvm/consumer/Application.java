@@ -30,7 +30,7 @@ import java.util.Map;
 
 public class Application {
 
-    private static final String REGISTRY_URL = "zookeeper://127.0.0.1:2181";
+    private static final String REGISTRY_URL = "nacos://192.168.8.177:8848";
 
 
     public static void main(String[] args) {

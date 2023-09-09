@@ -69,7 +69,7 @@ class ServiceCheckUtilsTest {
         repository.registerProvider(providerModel);
 
         String url1 = "service-discovery-registry://127.0.0.1:2181/org.apache.dubbo.registry.RegistryService?application=dubbo-demo-api-provider&dubbo=2.0.2&pid=66099&registry=zookeeper&timestamp=1654588337653";
-        String url2 = "zookeeper://127.0.0.1:2181/org.apache.dubbo.registry.RegistryService?application=dubbo-demo-api-provider&dubbo=2.0.2&pid=66099&timestamp=1654588337653";
+        String url2 = "nacos://192.168.8.177:8848/org.apache.dubbo.registry.RegistryService?application=dubbo-demo-api-provider&dubbo=2.0.2&pid=66099&timestamp=1654588337653";
         providerModel.getStatedUrl().add(new ProviderModel.RegisterStatedURL(url, URL.valueOf(url1), true));
         providerModel.getStatedUrl().add(new ProviderModel.RegisterStatedURL(url, URL.valueOf(url2), false));
 
@@ -82,7 +82,7 @@ class ServiceCheckUtilsTest {
         ServiceMetadata serviceMetadata = Mockito.mock(ServiceMetadata.class);
         Mockito.when(consumerModel.getServiceMetadata()).thenReturn(serviceMetadata);
         String registry1 = "service-discovery-registry://127.0.0.1:2181/org.apache.dubbo.registry.RegistryService?application=dubbo-demo-api-provider&dubbo=2.0.2&pid=66099&registry=zookeeper&timestamp=1654588337653";
-        String registry2 = "zookeeper://127.0.0.1:2181/org.apache.dubbo.registry.RegistryService?application=dubbo-demo-api-provider&dubbo=2.0.2&pid=66099&timestamp=1654588337653";
+        String registry2 = "nacos://192.168.8.177:8848/org.apache.dubbo.registry.RegistryService?application=dubbo-demo-api-provider&dubbo=2.0.2&pid=66099&timestamp=1654588337653";
         String registry3 = "nacos://127.0.0.1:8848/org.apache.dubbo.registry.RegistryService?application=dubbo-demo-api-provider&dubbo=2.0.2&pid=66099&timestamp=1654588337653";
         Map<Registry, MigrationInvoker<?>> invokerMap = new LinkedHashMap<>();
         {

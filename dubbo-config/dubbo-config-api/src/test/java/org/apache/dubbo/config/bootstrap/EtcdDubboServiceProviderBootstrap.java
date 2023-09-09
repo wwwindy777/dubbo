@@ -66,7 +66,7 @@ public class EtcdDubboServiceProviderBootstrap {
         DubboBootstrap.getInstance()
                 .application(applicationConfig)
                 // Zookeeper in service registry type
-//                .registry("zookeeper", builder -> builder.address("zookeeper://127.0.0.1:2181?registry.type=service"))
+//                .registry("zookeeper", builder -> builder.address("nacos://192.168.8.177:8848?registry.type=service"))
                 // Nacos
 //                .registry("zookeeper", builder -> builder.address("nacos://127.0.0.1:8848?registry.type=service"))
                 .registries(Arrays.asList(interfaceRegistry, serviceRegistry))
