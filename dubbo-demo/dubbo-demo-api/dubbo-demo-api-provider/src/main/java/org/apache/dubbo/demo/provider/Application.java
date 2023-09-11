@@ -34,11 +34,15 @@ public class Application {
 
     private static void startWithBootstrap() {
         ServiceConfig<DemoServiceImpl> service = new ServiceConfig<>();
+        //设置服务接口和实现类，这俩必须设置
         service.setInterface(DemoService.class);
         service.setRef(new DemoServiceImpl());
 
+        //getInstance可以传入一个ApplicationModel，如果不传设置一个默认的
         DubboBootstrap bootstrap = DubboBootstrap.getInstance();
-        bootstrap.application(new ApplicationConfig("dubbo-demo-api-provider"))
+        ApplicationConfig applicationConfig = new ApplicationConfig("dubbo-demo-api-provider");
+        applicationConfig.setRegisterMode("instance");
+        bootstrap.application(applicationConfig)
             .registry(new RegistryConfig(REGISTRY_URL))
             .protocol(new ProtocolConfig(CommonConstants.DUBBO, -1))
             .service(service)

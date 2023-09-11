@@ -25,7 +25,7 @@ dubbo:
     name: dubbo
     port: -1
   registry:
-    id: zk-registry
+    id: nacos-registry
     address: nacos://192.168.8.177:8848
   config-center:
     address: nacos://192.168.8.177:8848

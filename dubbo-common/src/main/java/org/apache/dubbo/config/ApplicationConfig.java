@@ -238,6 +238,7 @@ public class ApplicationConfig extends AbstractConfig {
 
     private String startupProbe;
 
+    //设置服务注册的级别
     private String registerMode;
 
     private Boolean enableEmptyProtection;
