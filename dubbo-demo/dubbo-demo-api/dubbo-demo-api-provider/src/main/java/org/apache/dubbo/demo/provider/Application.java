@@ -26,7 +26,7 @@ import org.apache.dubbo.demo.DemoService;
 
 public class Application {
 
-    private static final String REGISTRY_URL = "nacos://192.168.8.177:8848";
+    private static final String REGISTRY_URL = "nacos://101.43.201.160:8848";
 
     public static void main(String[] args) {
         startWithBootstrap();
@@ -47,6 +47,7 @@ public class Application {
             .protocol(new ProtocolConfig(CommonConstants.DUBBO, -1))
             .service(service)
             .start()
+            //如果start时已经等了，这个await就没啥用了，本质都是等待系统启动完成
             .await();
     }
 

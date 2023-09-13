@@ -224,6 +224,7 @@ public final class DubboBootstrap {
      * @return
      */
     public DubboBootstrap start(boolean wait) {
+        //异步操作，控制是否等待应用启动完成
         Future future = applicationDeployer.start();
         if (wait) {
             try {

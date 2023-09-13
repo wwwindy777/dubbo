@@ -28,7 +28,8 @@ import org.apache.dubbo.rpc.service.GenericService;
 
 public class Application {
 
-    private static final String REGISTRY_URL = "nacos://192.168.8.177:8848";
+    private static final String REGISTRY_URL = "nacos://101.43.201.160:8848";
+    private static final String REGISTRY_LOCAL_URL = "nacos://127.0.0.1:8848";
 
 
 

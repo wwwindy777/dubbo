@@ -64,11 +64,13 @@ public class RegistryConfig extends AbstractConfig {
 
     /**
      * Protocol for register center
+     * 注册中心的类型，nacos，zookeeper等，支持多注册中心
      */
     private String protocol;
 
     /**
      * Network transmission type
+     * 传输类型
      */
     private String transporter;
 
@@ -79,16 +81,19 @@ public class RegistryConfig extends AbstractConfig {
     /**
      * Affects how traffic distributes among registries, useful when subscribing multiple registries, available options:
      * 1. zone-aware, a certain type of traffic always goes to one Registry according to where the traffic is originated.
+     * 多注册中心时使用
      */
     private String cluster;
 
     /**
      * The region where the registry belongs, usually used to isolate traffics
+     * 注册表分区？
      */
     private String zone;
 
     /**
      * The group that services registry in
+     * 分组
      */
     private String group;
 
@@ -96,16 +101,19 @@ public class RegistryConfig extends AbstractConfig {
 
     /**
      * Connect timeout in milliseconds for register center
+     * 连接超时时间
      */
     private Integer timeout;
 
     /**
      * Session timeout in milliseconds for register center
+     * 会话超时时间
      */
     private Integer session;
 
     /**
      * File for saving register center dynamic list
+     * 保存注册列表的文件
      */
     private String file;
 
@@ -126,6 +134,7 @@ public class RegistryConfig extends AbstractConfig {
 
     /**
      * Whether to allow exporting service on the register center
+     * 是否允许导出服务
      */
     private Boolean register;
 
