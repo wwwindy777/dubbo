@@ -226,6 +226,7 @@ public class DefaultApplicationDeployer extends AbstractDeployer<ApplicationMode
             initMetricsService();
 
             // @since 2.7.8
+            //启动元数据中心
             startMetadataCenter();
 
             initialized = true;

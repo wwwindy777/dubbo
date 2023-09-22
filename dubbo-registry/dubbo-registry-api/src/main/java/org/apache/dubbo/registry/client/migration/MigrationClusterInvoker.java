@@ -25,6 +25,15 @@ import org.apache.dubbo.rpc.cluster.ClusterInvoker;
  * FIXME, some methods need to be further optimized.
  *
  * @param <T>
+ * isServiceDiscovery()方法用于判断是否使用服务发现。
+ * getMigrationStep()方法用于获取迁移步骤。
+ * setMigrationStep()方法用于设置迁移步骤。
+ * getMigrationRule()方法用于获取迁移规则。
+ * setMigrationRule()方法用于设置迁移规则。
+ * migrateToForceInterfaceInvoker()方法用于将调用器迁移到强制接口调用器。
+ * migrateToForceApplicationInvoker()方法用于将调用器迁移到强制应用调用器。
+ * migrateToApplicationFirstInvoker()方法用于将调用器迁移到应用优先调用器。
+ * reRefer()方法用于重新引用URL。
  */
 public interface MigrationClusterInvoker<T> extends ClusterInvoker<T> {
 

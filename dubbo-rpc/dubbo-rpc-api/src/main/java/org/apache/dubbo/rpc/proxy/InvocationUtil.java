@@ -42,6 +42,7 @@ public class InvocationUtil {
         try {
             URL url = invoker.getUrl();
             String serviceKey = url.getServiceKey();
+            //获取 invoker 的URL，并从中获取serviceKey设置给rpcInvocation，告诉他要调用的服务的信息
             rpcInvocation.setTargetServiceUniqueName(serviceKey);
 
             // invoker.getUrl() returns consumer url.

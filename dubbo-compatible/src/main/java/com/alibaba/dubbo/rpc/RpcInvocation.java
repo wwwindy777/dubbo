@@ -140,7 +140,6 @@ public class RpcInvocation implements Invocation, Serializable {
     public void setArguments(Object[] arguments) {
         this.arguments = arguments == null ? new Object[0] : arguments;
     }
-
     public Map<String, String> getAttachments() {
         return attachments;
     }

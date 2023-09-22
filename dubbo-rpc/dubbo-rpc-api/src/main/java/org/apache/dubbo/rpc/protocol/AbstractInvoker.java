@@ -184,9 +184,11 @@ public abstract class AbstractInvoker<T> implements Invoker<T> {
         prepareInvocation(invocation);
 
         // do invoke rpc invocation and return async result
+        //获取到异步执行的结果
         AsyncRpcResult asyncResult = doInvokeAndReturn(invocation);
 
         // wait rpc result if sync
+        //如果是同步调用就等结果
         waitForResultIfSync(asyncResult, invocation);
 
         return asyncResult;
@@ -267,7 +269,7 @@ public abstract class AbstractInvoker<T> implements Invoker<T> {
             // set server context
             RpcContext.getServiceContext().setFuture(new FutureAdapter<>(asyncResult.getResponseFuture()));
         }
-
+        //返回异步执行结果
         return asyncResult;
     }
 
@@ -283,7 +285,7 @@ public abstract class AbstractInvoker<T> implements Invoker<T> {
              */
             Object timeoutKey = invocation.getObjectAttachmentWithoutConvert(TIMEOUT_KEY);
             long timeout = RpcUtils.convertToNumber(timeoutKey, Integer.MAX_VALUE);
-
+            //如果是同步调用会在这等待调用结果
             asyncResult.get(timeout, TimeUnit.MILLISECONDS);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();

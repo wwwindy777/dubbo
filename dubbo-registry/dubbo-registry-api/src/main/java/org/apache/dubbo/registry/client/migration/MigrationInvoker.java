@@ -273,6 +273,10 @@ public class MigrationInvoker<T> implements MigrationClusterInvoker<T> {
 
     @Override
     public Result invoke(Invocation invocation) throws RpcException {
+        //如果步骤是"APPLICATION_FIRST"，则进行以下操作：
+        //根据随机值计算调用比例。
+        //如果计算出的比例小于100且随机生成的值大于该比例，则回退到接口模式，调用invoker的invoke方法。
+        //否则，调用decideInvoker方法选择一个可用的调用者，并调用其invoke方法。
         if (currentAvailableInvoker != null) {
             if (step == APPLICATION_FIRST) {
                 // call ratio calculation based on random value
@@ -285,7 +289,9 @@ public class MigrationInvoker<T> implements MigrationClusterInvoker<T> {
             }
             return currentAvailableInvoker.invoke(invocation);
         }
-
+        //如果步骤不是"APPLICATION_FIRST"，则根据步骤进行以下操作：
+        //如果步骤是"FORCE_APPLICATION"，则将currentAvailableInvoker设置为serviceDiscoveryInvoker。
+        //如果步骤是"FORCE_INTERFACE"或其他情况，则将currentAvailableInvoker设置为invoker。
         switch (step) {
             case APPLICATION_FIRST:
                 currentAvailableInvoker = decideInvoker();

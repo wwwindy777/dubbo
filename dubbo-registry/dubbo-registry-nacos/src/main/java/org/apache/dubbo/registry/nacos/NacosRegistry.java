@@ -91,11 +91,16 @@ public class NacosRegistry extends FailbackRegistry {
 
     /**
      * All supported categories
+     * 支持的注册类别
      */
     private static final List<String> ALL_SUPPORTED_CATEGORIES = Arrays.asList(
+        //提供方
         PROVIDERS_CATEGORY,
+        //消费方
         CONSUMERS_CATEGORY,
+        //路由
         ROUTERS_CATEGORY,
+        //配置
         CONFIGURATORS_CATEGORY
     );
 
